@@ -16,7 +16,7 @@ function WeatherApp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const result = await axios.get(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&lang=es&units=metric`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&lang=es&units=metric`
     );
     setWeatherData(result.data);
     setCurrentDate(new Date(result.data.dt * 1000));
@@ -61,7 +61,7 @@ function WeatherApp() {
           </h2>
 
           <img
-            src={`http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
+            src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`}
             alt={weatherData.weather[0].description}
             className="weather-app-results-item clim-icon"
           />
